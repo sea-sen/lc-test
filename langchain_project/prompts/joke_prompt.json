@@ -1,0 +1,5 @@
+{
+    "template_name": "joke_generator",
+    "input_variables": ["topic"],
+    "template": "Tell me a short joke about {topic}."
+}

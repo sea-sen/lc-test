@@ -1,0 +1,5 @@
+{
+    "template_name": "text_summarizer",
+    "input_variables": ["text_to_summarize"],
+    "template": "Please provide a concise summary of the following text:\n\n{text_to_summarize}"
+}
