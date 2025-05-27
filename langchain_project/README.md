@@ -124,4 +124,39 @@ Some modules contain `if __name__ == '__main__':` blocks that allow you to test 
 *   **`.env` / `python-dotenv`**:
     *   Used for managing environment variables, primarily your `OPENAI_API_KEY`. `load_dotenv()` is called in relevant scripts to load these variables.
 
+## Streamlit Frontend UI
+
+This project includes an interactive web interface built with Streamlit to help you view configurations, interact with components, and audit behavior.
+
+### Running the Streamlit App
+
+1.  **Ensure Setup is Complete:** Make sure you have completed all steps in the main "Setup" section of this README (Python environment, `.env` file with `OPENAI_API_KEY`, and `pip install -r requirements.txt`). `streamlit` is included in `requirements.txt`.
+
+2.  **Navigate to Project Root:** Open your terminal and change to the `langchain_project` directory.
+
+3.  **Run Streamlit:** Execute the following command:
+    ```bash
+    streamlit run frontend/streamlit_app.py
+    ```
+    This will typically open the application in your default web browser.
+
+### UI Features
+
+The Streamlit application ("Langchain Project Control Center") provides the following sections (accessible via the sidebar):
+
+*   **Dashboard:** An overview page showing API key status and brief descriptions of other sections.
+*   **Prompt Viewer:**
+    *   Lists all available prompt templates (from `prompts/*.json`).
+    *   Allows you to select a prompt and view its details: input variables, template string, and raw JSON source.
+*   **Embedding Inspector:**
+    *   Displays the configured OpenAI embedding model.
+    *   Allows you to input text and generate its embedding, showing dimensionality and a snippet of the vector.
+    *   Includes a simple similarity search demo against a predefined set of documents using FAISS.
+*   **LLM Interaction:**
+    *   Provides a chat interface to interact with the function-calling agent.
+    *   Displays the agent's final answers.
+    *   Shows the intermediate steps (tool calls and agent observations) for transparency, helping you audit the agent's reasoning process.
+
+This UI is designed to make the underlying Langchain components more accessible and easier to understand.
+
 This framework is a starting point. You can expand it by adding more prompts, tools, chains, data sources, and more sophisticated orchestration logic.
